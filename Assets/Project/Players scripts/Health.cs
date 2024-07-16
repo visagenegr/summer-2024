@@ -6,13 +6,14 @@ public class Health : MonoBehaviour
 {
    public int maxHealth = 100; // Максимальное количество здоровья
     public int currentHealth;
+    public CameraFollow cameraFollow;
+    public DeathUI deathUI; // Ссылка на компонент DeathUI
 
     private void Start()
     {
-        currentHealth = maxHealth; // Устанавливаем текущее здоровье на максимальное при старте
+        currentHealth = maxHealth;
     }
 
-    // Метод для нанесения урона
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -22,7 +23,6 @@ public class Health : MonoBehaviour
         }
     }
 
-    // Метод для восстановления здоровья
     public void Heal(int amount)
     {
         currentHealth += amount;
@@ -31,13 +31,24 @@ public class Health : MonoBehaviour
             currentHealth = maxHealth;
         }
     }
+
     private void Die()
     {
-        Debug.Log("Player died");
+        if (cameraFollow != null)
+        {
+            cameraFollow.OnTargetDeath();
+        }
+
+        if (deathUI != null)
+        {
+            deathUI.ShowDeathScreen();
+        }
+
+        foreach (MonoBehaviour script in GetComponents<MonoBehaviour>())
+        {
+            script.enabled = false;
+        }
+
         Destroy(gameObject);
-    }
-    void FixedUpdate()
-    {
-        Debug.Log(currentHealth);
     }
 }
