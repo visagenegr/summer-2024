@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
    public int maxHealth = 100; // Максимальное количество здоровья
-    private int currentHealth;
+    public int currentHealth;
 
     private void Start()
     {
