@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4731641539792926746}
   - component: {fileID: 2800170210549325722}
   - component: {fileID: 4808259397066322655}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rocket missile
   m_TagString: Destroyable
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aad0cf549d42fd47a57ae6afa731a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 150
   explosionRadius: 3
   speed: 40
   explosionPrefab: {fileID: 7140651732730671526, guid: 45c9c385ca440c3498ee8343dc8e1647, type: 3}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 2998080094974462928}
   - component: {fileID: 6160947935194344835}
   - component: {fileID: 3965577842117184755}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 983476929388515550}
   - component: {fileID: 5837733820703304378}
   - component: {fileID: 7680711274736103625}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 7533260387444391088}
   - component: {fileID: 7495168293201166682}
   - component: {fileID: 3790533311708665513}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rocket missile 123
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4954,6 +4954,7 @@ MonoBehaviour:
   damage: 50
   explosionRadius: 5
   speed: 10
+  explosionPrefab: {fileID: 0}
   rbody: {fileID: 3790533311708665513}
 --- !u!64 &7495168293201166682
 MeshCollider:

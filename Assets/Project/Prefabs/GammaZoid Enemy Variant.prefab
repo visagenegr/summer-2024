@@ -8,9 +8,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1079669097786836, guid: 6a3276423bc22a240bc8c1525a815940, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194446901865326, guid: 6a3276423bc22a240bc8c1525a815940, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278371189075588, guid: 6a3276423bc22a240bc8c1525a815940, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879590038969296, guid: 6a3276423bc22a240bc8c1525a815940, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1951038876638166, guid: 6a3276423bc22a240bc8c1525a815940, type: 3}
       propertyPath: m_Name
       value: GammaZoid Enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951038876638166, guid: 6a3276423bc22a240bc8c1525a815940, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4421555957644834, guid: 6a3276423bc22a240bc8c1525a815940, type: 3}
       propertyPath: m_LocalScale.x

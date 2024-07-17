@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6392943394101420416}
   - component: {fileID: 1215052245324117607}
   - component: {fileID: 5273484386578544823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bullet
   m_TagString: Destroyable
   m_Icon: {fileID: 0}
