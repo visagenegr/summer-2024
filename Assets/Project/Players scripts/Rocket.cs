@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-   public int damage = 50; 
-    public float explosionRadius = 5.0f; 
-    public float speed = 10.0f; 
-    
-    public Rigidbody  rbody;
+    public int damage = 50;
+    public float explosionRadius = 5.0f;
+    public float speed = 10.0f;
+    public GameObject explosionPrefab;
+    public Rigidbody rbody;
 
     void Start()
     {
-        rbody.AddForce(transform.forward * speed,ForceMode.VelocityChange);
+        rbody.AddForce(transform.forward * speed, ForceMode.VelocityChange);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,7 +22,10 @@ public class Rocket : MonoBehaviour
 
     IEnumerator Explode()
     {
-        yield return new WaitForSeconds(0.1f); 
+        yield return new WaitForSeconds(0.1f);
+
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider hit in colliders)
         {
@@ -32,6 +35,6 @@ public class Rocket : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
         }
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 }

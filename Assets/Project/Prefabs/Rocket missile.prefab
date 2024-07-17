@@ -125,6 +125,7 @@ MonoBehaviour:
   damage: 100
   explosionRadius: 3
   speed: 40
+  explosionPrefab: {fileID: 7140651732730671526, guid: 45c9c385ca440c3498ee8343dc8e1647, type: 3}
   rbody: {fileID: 2800170210549325722}
 --- !u!64 &4731641539792926746
 MeshCollider:
