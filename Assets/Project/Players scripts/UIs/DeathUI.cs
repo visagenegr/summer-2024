@@ -8,9 +8,9 @@ using UnityEngine.UI;
 
 public class DeathUI : MonoBehaviour
 {
-  public GameObject deathScreen; // UI экран при смерти
-    public TMP_Text healthText; // Текст для отображения HP игрока
-    private Health playerHealth; // Ссылка на компонент Health игрока
+ public GameObject deathPanel;
+    public TMP_Text healthText;
+    private Health playerHealth;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class DeathUI : MonoBehaviour
         if (player != null)
         {
             playerHealth = player.GetComponent<Health>();
-            playerHealth.deathUI = this; // Устанавливаем ссылку на DeathUI
+            playerHealth.deathPanel = deathPanel;
         }
         else
         {
@@ -33,18 +33,18 @@ public class DeathUI : MonoBehaviour
             healthText.text = "HP: " + playerHealth.currentHealth.ToString();
             Debug.Log("Current Health: " + playerHealth.currentHealth);
 
-            if (playerHealth.currentHealth <= 0 && !deathScreen.activeSelf)
+            if (playerHealth.currentHealth <= 0 && !deathPanel.activeSelf)
             {
-                ShowDeathScreen();
+                ShowDeathPanel();
             }
         }
     }
 
-    public void ShowDeathScreen()
+    public void ShowDeathPanel()
     {
-        Debug.Log("Showing Death Screen");
+        Debug.Log("Showing Death Panel");
         healthText.gameObject.SetActive(false);
-        deathScreen.SetActive(true);
+        deathPanel.SetActive(true);
     }
 
     public void RestartGame()

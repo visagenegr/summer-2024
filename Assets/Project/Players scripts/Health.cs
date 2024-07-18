@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-   public int maxHealth = 100; // Максимальное количество здоровья
+    public int maxHealth = 100; // Максимальное количество здоровья
     public int currentHealth;
     public CameraFollow cameraFollow;
-    public DeathUI deathUI; // Ссылка на компонент DeathUI
+    public GameObject deathPanel; // Панель смерти из Canvas
+    public GameObject explosionEffect; // Префаб партикла взрыва
 
     private void Start()
     {
         currentHealth = maxHealth;
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(false); // Отключаем панель смерти по умолчанию
+        }
     }
 
     public void TakeDamage(int damage)
@@ -34,14 +39,16 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+
         if (cameraFollow != null)
         {
             cameraFollow.OnTargetDeath();
         }
 
-        if (deathUI != null)
+        if (deathPanel != null)
         {
-            deathUI.ShowDeathScreen();
+            deathPanel.SetActive(true); // Включаем панель смерти
         }
 
         foreach (MonoBehaviour script in GetComponents<MonoBehaviour>())

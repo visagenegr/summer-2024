@@ -14,7 +14,11 @@ public class Enemyshooter : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (player != null)
+        {
+            AimAndShoot();
+        }
     }
 
     void Update()

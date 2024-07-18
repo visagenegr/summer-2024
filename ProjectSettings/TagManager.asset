@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Destroyable
   - Text
+  - Enemy
+  - wall
   layers:
   - Default
   - TransparentFX
